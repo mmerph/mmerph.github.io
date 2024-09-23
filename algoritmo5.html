@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Pi</title>
+    <style>
+        body {
+            font-family: Garamond, serif; 
+            background-color: #ffc8dd;
+            color: #4a4e69;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #6a4c93;
+            font-weight: normal;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            margin: 10px;
+            border: 2px solid #ffafcc;
+            border-radius: 5px;
+            width: 50%;
+            font-size: 1em;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #ffafcc;
+            border: none;
+            border-radius: 8px;
+            color: #22223b;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #f4a4b8;
+            color: #ffffff;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #a663cc;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            color: #ffafcc;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4a4e69;
+        }
+    </style>
+    <script>
+        function calcularPi() {
+            let iteraciones = parseInt(document.getElementById("iteraciones").value);
+            let resultado = 0.0;
+            let control = false;
+            let serie = "π = 4.0 ( ";
+
+            if (!isNaN(iteraciones) && iteraciones > 0) {
+                for (let i = 1; i < iteraciones * 2; i += 2) {
+                    if (control) {
+                        serie += i < iteraciones * 2 - 1 ? `1/${i} + ` : `1/${i}`;
+                        resultado -= 1.0 / i;
+                        control = false;
+                    } else {
+                        serie += i < iteraciones * 2 - 1 ? `1/${i} - ` : `1/${i}`;
+                        resultado += 1.0 / i;
+                        control = true;
+                    }
+                }
+                serie += " )";
+                document.getElementById("resultado").innerText = serie + "\n\nπ = " + (4 * resultado).toFixed(10);
+            } else {
+                document.getElementById("resultado").innerText = "ERROR: Las iteraciones tienen que ser un número positivo entero.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar al menú</a><br></p>
+    <h2>-ˋˏ ༻✿༺ ˎˊ- Programa que calcula el valor aproximado de π usando la serie de Leibniz -ˋˏ ༻✿༺ ˎˊ-</h2>
+    Número de iteraciones: <input type="text" id="iteraciones" value="5" placeholder="Ingrese un número de iteraciones"><br>
+    <input type="button" value="Calcular π" onclick="calcularPi()">
+    <p id="resultado">Resultado:</p>
+</body>
+</html>

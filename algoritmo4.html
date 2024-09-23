@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 4</title>
+    <style>
+        body {
+            font-family: Garamond, serif; 
+            background-color: #ffc8dd;
+            color: #4a4e69;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2{
+            color: #6a4c93;
+            font-weight: normal;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            margin: 10px;
+            border: 2px solid #ffafcc;
+            border-radius: 5px;
+            width: 50%;
+            font-size: 1em;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #ffafcc;
+            border: none;
+            border-radius: 8px;
+            color: #22223b;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #f4a4b8;
+            color: #ffffff;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #a663cc;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            color: #ffafcc;
+        }
+
+        #out {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4a4e69;
+        }
+    </style>
+    <script>
+        function fibonacci() {
+            var limite = parseInt(document.getElementById("limite").value);
+            if (!isNaN(limite) && limite > 1) {
+                var a = 0, b = 1, c;
+                var resultado = `${a} ${b} `; 
+                
+                while (true) {
+                    c = a + b;
+                    if (c > limite) break; 
+                    resultado += `${c} `;
+                    a = b;
+                    b = c;
+                }
+                
+                document.getElementById("out").innerText = `Resultado ${resultado}`;
+            } else {
+                document.getElementById("out").innerText = `Por favor, ingresa un número válido mayor que 1.`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar al menú</a><br></p>
+    <h2>-ˋˏ ༻✿༺ ˎˊ- Programa que muestra la serie de Fibonacci hasta el límite que ponga el usuario -ˋˏ ༻✿༺ ˎˊ-</h2>
+    Límite para la serie: <input type="text" id="limite" value="20"><br>
+    <input type="button" value="Producir serie" onclick="fibonacci()">
+    <p id="out">Resultado:</p>
+</body>
+</html>

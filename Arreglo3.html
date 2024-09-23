@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 3</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            background-color: #ffc8dd;
+            color: #4a4e69;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #6a4c93;
+            margin-bottom: 20px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #ffafcc;
+            border: none;
+            border-radius: 8px;
+            color: #22223b;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #f4a4b8;
+            color: #ffffff;
+        }
+
+        select {
+            padding: 10px;
+            border: 2px solid #ffafcc;
+            border-radius: 8px;
+            background-color: #ffe5e5;
+            color: #4a4e69;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table, th, td {
+            text-align: center;
+            border: 1px solid #ffafcc;
+            padding: 10px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ff8bb8;
+            border-radius: 8px;
+            width: 60%;
+            font-size: .8em;
+            background-color: #ffc8dd;
+            color: #22223b;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #verificar {
+            color: #6a4c93;
+        }
+
+        a {
+            text-decoration: none;
+            color: #a663cc;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ffafcc;
+        }
+        p a {
+            text-decoration: none;
+            color: #a663cc;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            color: #ffafcc;
+        }
+    </style>
+    <script src="./ofusA3.js"></script>
+</head>
+<body onload="Generar()">
+    <p><a href="index.html">Regresar al menú</a><br></p>
+    <h2>-ˋˏ ༻✿༺ ˎˊ- Cuadrado Mágico -ˋˏ ༻✿༺ ˎˊ-</h2>
+    <p>Los cuadrados mágicos son un conjunto de números enteros diferentes colocados en las casillas de un cuadrado. 
+       La suma de sus filas, columnas y diagonales principales es siempre la misma, conocida como Constante mágica del Cuadrado.</p>
+    <br>
+    Seleccione el tamaño del cuadrado:
+    <select id="lados" onchange="Generar()">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br><br>
+    <input type="button" value="Generar" onclick="Generar()">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <input type="button" value="Ejemplo de Cuadrado" onclick="EjemploCuadrado()">
+    <input type="button" value="Ejemplo de Cuadrado mágico" onclick="EjemploMagico()">
+    <table border="1" id="cuadrado"></table>
+    <h1 id="verificar" style="display: none;">No es cuadrado mágico</h1>
+</body>
+</html>

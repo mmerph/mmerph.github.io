@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmo 2</title>
+  <style> 
+    body {
+            font-family: Garamond, serif; 
+            background-color: #ffc8dd;
+            color: #4a4e69;
+            text-align: center;
+            padding: 20px;
+            margin: 0;        
+        }
+
+        h2 {
+            color: #6a4c93;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"], input[type="submit"], input[type="button"] {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ffafcc;
+            border-radius: 8px;
+            width: 60%;
+            font-size: 1em;
+            background-color: #ffafcc;
+            color: #22223b;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #f4a4b8;
+            color: white;
+        }
+
+        table {
+            width: 40%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color:#ffcbde;
+            font-weight: bold;
+        }
+
+        
+        table, th, td {
+            background-color:#ffcbde;
+            border: 1px solid #ff97bd;
+            padding: 10px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #a663cc;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            color: #ffafcc;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+  </style>
+  <script src="./ofusA2.js"></script>
+</head>
+<body onload="Aleatorio()">
+  <p><a href="index.html">Regresar al menú</a><br></p>
+  <h2>-ˋˏ ༻✿༺ ˎˊ- Arreglo de 10 elementos -ˋˏ ༻✿༺ ˎˊ-</h2>
+  <p>
+    Al capturar un arreglo de 10 elementos de tipo entero, el programa lo imprime de forma vertical y horizontal, ascendente y descendentemente, encuentra el elemento menor, el mayor, la suma, la media, la mediana y la moda.<br>
+  </p>
+  <form action="javascript: Capturar()">
+    <p style="display: inline;" id="contador">Elemento [0]:</p>
+    <input type="number" id="elementoInput" required>
+    <input type="submit" value="Capturar" id="capturaBoton">
+    <input type="button" value="Generar resultados" id="generarBoton" onclick="Calcular()" disabled>
+    <input type="button" value="Reiniciar" onclick="Reiniciar()" >
+
+    <p id="resultados"></p>
+    <table id="tablaHorizontal" border="2" style="border-collapse:collapse;">
+      <tr id="renglonIndice"></tr>
+      <tr id="renglonDato"></tr>
+    </table>
+    <table id="tablaHorizontal2" border="2" style="border-collapse:collapse;">
+      <tr id="renglonIndice2"></tr>
+      <tr id="renglonDato2"></tr>
+    </table>
+    <table id="tablaHorizontal3" border="2" style="border-collapse:collapse;">
+      <tr id="renglonIndice3"></tr>
+      <tr id="renglonDato3"></tr>
+    </table>
+    <br>
+    <table id="tablaVertical" border="2" style="border-collapse:collapse; display: inline-block;"></table>
+    <table id="tablaVertical2" border="2" style="border-collapse:collapse; display: inline-block;"></table>
+    <table id="tablaVertical3" border="2" style="border-collapse:collapse; display: inline-block;"></table>
+  </form>
+</body>
+</html>

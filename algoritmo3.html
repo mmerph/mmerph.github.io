@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 3</title>
+    <style>
+        body {
+            font-family: Garamond, serif; 
+            background-color: #ffc8dd;
+            color: #4a4e69;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #6a4c93;
+            font-weight: normal;
+            font-style: bold;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            margin: 10px;
+            border: 2px solid #ffafcc;
+            border-radius: 5px;
+            width: 60%;
+            font-size: 1em;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #ffafcc;
+            border: none;
+            border-radius: 8px;
+            color: #22223b;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #f4a4b8;
+            color: #ffffff;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #a663cc;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            color: #ffafcc;
+        }
+
+        #out {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4a4e69;
+        }
+
+        .ejemplo {
+            color: #6a4c93;
+            font-size: 1em;
+            text-align: left;
+            margin: 20px auto;
+            width: 20%;
+            border: 1px solid #ffafcc;
+            padding: 10px;
+            background-color: #ffe5e5;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            font-style: bold;
+        }
+
+        .ejemplo p {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function paresAlCubo() {
+            if (!isNaN(document.getElementById("num").value) && document.getElementById("num").value > 1) {
+                var naturales = parseInt(document.getElementById("num").value);
+                var resultado = "Resultado <br>";
+                var contador = 0;
+                for (let i = 2; contador < naturales; i++) {
+                    if (i % 2 == 0) {
+                        resultado += `${i} al cubo es ${i * i * i}<br>`;
+                        contador++;
+                    }
+                }
+                document.getElementById("out").innerHTML = resultado;
+            } else {
+                document.getElementById("out").innerHTML = `Error: El valor debe ser numérico y mayor a 1.`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p><a href="index.html">Regresar al menú</a><br></p>
+    <h2>-ˋˏ ༻✿༺ ˎˊ- Programa que muestra los números naturales pares elevados al cubo -ˋˏ ༻✿༺ ˎˊ-</h2>
+    
+    <div class="ejemplo">
+        <p>&emsp;/)&emsp;/)<br>
+            (｡•ㅅ•｡)〝₎₎ Ejemplo: ✦₊ ˊ˗ <br>
+            ╭∪─∪────────── ✦ ⁺.<br>
+            ┊ 2 al cubo es 8<br>
+            ┊﹒4 al cubo es 64<br>
+            ┊6 al cubo es ...<br>
+            ┊8 al cubo es ...<br>
+            ┊10 al cubo es ...<br>
+            ╰───────────── ✦ ⁺.<br></p>
+    </div>
+    
+    Cantidad de números naturales pares: <input type="text" id="num" value="4"><br>
+    <input type="button" value="Encontrar los primeros n números naturales" onclick="paresAlCubo()">
+    <p id="out"> Resultado: </p>
+</body>
+
+</html>
