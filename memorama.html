@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorama</title>
-    <link rel="stylesheet" href="./CSS/estiloMemorama.css">
-    <script src="./JS/functMemorama.js"></script>
+    <link rel="stylesheet" href=".estiloMemorama.css">
+    <script src="./ofusMemorama.js"></script>
 </head>
 <body onload = "Shuffle();Fondo();">
     <p><a href="index.html">Regresar al Menú</a></p>
     <h1>-ˋˏ ༻✿༺ ˎˊ-Memorama-ˋˏ ༻✿༺ ˎˊ- </h1>
+    <input type="button" class="button" value="Reiniciar" onclick="Reiniciar()"><br>
     <table id="tablita">
         <tr>
             <td><img src = "./IMG/0.jpg" id="0" alt = "" srcset = "" class="imagen" onclick="CambiarImagen(this, 0)"></td>
@@ -40,7 +41,6 @@
 
     </table>
     <h2 id="contador">Pares encontrados: 0</h2>
-    <input type="button" class="button" value="Reiniciar" onclick="Reiniciar()">
     <p id="Salida"></p>
 </body>
 
